@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stupid Simple Audio — 22 plugins. Three knobs each.</title>
+<meta name="description" content="22 audio plugins. Three knobs each. Bundle $50, or pick one for $5.">
+<meta property="og:title" content="Stupid Simple Audio">
+<meta property="og:description" content="22 audio plugins. Three knobs each. Bundle $50, or pick one for $5.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stupidsimpleaudio.com">
+<meta name="theme-color" content="#FAF3E0">
+<link rel="icon" type="image/svg+xml" href="smiley.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Patrick+Hand&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script defer src="audio-player.js?v=4"></script>
+<script defer src="plugin-modal.js?v=7"></script>
+</head>
+<body>
+
+<!-- ============== HERO ============== -->
+<header class="hero">
+  <div class="wrap">
+    <img class="hero-smiley" src="smiley.svg" alt="Stupid Simple Audio logo — a hand-drawn yellow smiley">
+    <h1 class="hero-title">stupid simple</h1>
+    <p class="hero-tag">22 audio plugins. Three knobs each.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary btn-huge" href="https://stupidsimpleaudio.gumroad.com/l/bundle">Buy all 22 — $50</a>
+    </div>
+    <p class="hero-sub">or pick one for <strong>$5</strong> <span class="arrow">↓</span></p>
+  </div>
+</header>
+
+<!-- ============== PLUGIN GRID — each card is its own buy button ============== -->
+<section class="section-grid" id="plugins">
+  <div class="wrap">
+
+    <!-- Three dry source players. Hear each source clean, then click any plugin to hear it processed. -->
+    <div class="dry-row">
+      <div class="dry-sample">
+        <button class="play-btn dry-btn" type="button" data-audio="vocal" aria-label="Play dry vocal">
+          <span class="play-icon" aria-hidden="true"></span>
+        </button>
+        <div class="dry-text">
+          <div class="dry-label">Dry vocal</div>
+          <div class="dry-hint">"Call My Bluff" acapella</div>
+        </div>
+      </div>
+      <div class="dry-sample">
+        <button class="play-btn dry-btn" type="button" data-audio="drums" aria-label="Play dry drums">
+          <span class="play-icon" aria-hidden="true"></span>
+        </button>
+        <div class="dry-text">
+          <div class="dry-label">Dry drums</div>
+          <div class="dry-hint">Funk drum break</div>
+        </div>
+      </div>
+      <div class="dry-sample">
+        <button class="play-btn dry-btn" type="button" data-audio="piano" aria-label="Play dry piano">
+          <span class="play-icon" aria-hidden="true"></span>
+        </button>
+        <div class="dry-text">
+          <div class="dry-label">Dry piano</div>
+          <div class="dry-hint">Soulful chord loop</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="grid-intro">Click any plugin to hear it on all three.</p>
+
+    <div class="grid">
+      <!-- ORDER: modulation/creative first (eye-catching), utility plugins last. -->
+      <a class="card" href="BUY_WOBBLER_URL">
+        <div class="card-name">Wobbler</div>
+        <div class="card-desc">Tremolo with shape</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="wobbler-vocal" aria-label="Play wobbler vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="wobbler-drums" aria-label="Play wobbler drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="wobbler-piano" aria-label="Play wobbler piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_FILTER_URL">
+        <div class="card-name">Filter</div>
+        <div class="card-desc">LFO-swept filter</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="filter-vocal" aria-label="Play filter vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="filter-drums" aria-label="Play filter drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="filter-piano" aria-label="Play filter piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_PANNER_URL">
+        <div class="card-name">Panner</div>
+        <div class="card-desc">Auto-pan with shape</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="panner-vocal" aria-label="Play panner vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="panner-drums" aria-label="Play panner drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="panner-piano" aria-label="Play panner piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_STUTTER_URL">
+        <div class="card-name">Stutter</div>
+        <div class="card-desc">Chance-based beat-repeat</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="stutter-vocal" aria-label="Play stutter vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="stutter-drums" aria-label="Play stutter drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="stutter-piano" aria-label="Play stutter piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_GLITCH_URL">
+        <div class="card-name">Glitch</div>
+        <div class="card-desc">Random chaos engine</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="glitch-vocal" aria-label="Play glitch vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="glitch-drums" aria-label="Play glitch drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="glitch-piano" aria-label="Play glitch piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_WOW_URL">
+        <div class="card-name">Wow</div>
+        <div class="card-desc">Tape varispeed wobble</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="wow-vocal" aria-label="Play wow vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="wow-drums" aria-label="Play wow drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="wow-piano" aria-label="Play wow piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_TAPESTOP_URL">
+        <div class="card-name">Tape Stop</div>
+        <div class="card-desc">Auto tape decel</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="tapestop-vocal" aria-label="Play tapestop vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="tapestop-drums" aria-label="Play tapestop drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="tapestop-piano" aria-label="Play tapestop piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_REVERSE_URL">
+        <div class="card-name">Reverse</div>
+        <div class="card-desc">Reversed chunks</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="reverse-vocal" aria-label="Play reverse vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="reverse-drums" aria-label="Play reverse drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="reverse-piano" aria-label="Play reverse piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_FREEZE_URL">
+        <div class="card-name">Freeze</div>
+        <div class="card-desc">Phrase sustainer</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="freeze-vocal" aria-label="Play freeze vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="freeze-drums" aria-label="Play freeze drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="freeze-piano" aria-label="Play freeze piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_VOICE_URL">
+        <div class="card-name">Voice</div>
+        <div class="card-desc">±12 semitone pitch shift</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="voice-vocal" aria-label="Play voice vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="voice-drums" aria-label="Play voice drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="voice-piano" aria-label="Play voice piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_WIDE_URL">
+        <div class="card-name">Wide</div>
+        <div class="card-desc">Pitch widener</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="wide-vocal" aria-label="Play wide vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="wide-drums" aria-label="Play wide drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="wide-piano" aria-label="Play wide piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_DOUBLE_URL">
+        <div class="card-name">Double</div>
+        <div class="card-desc">Vocal doubler</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="double-vocal" aria-label="Play double vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="double-drums" aria-label="Play double drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="double-piano" aria-label="Play double piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_DELAY_URL">
+        <div class="card-name">Delay</div>
+        <div class="card-desc">Tempo-synced echo</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="delay-vocal" aria-label="Play delay vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="delay-drums" aria-label="Play delay drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="delay-piano" aria-label="Play delay piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_REVERB_URL">
+        <div class="card-name">Reverb</div>
+        <div class="card-desc">Plate, hall, space</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="reverb-vocal" aria-label="Play reverb vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="reverb-drums" aria-label="Play reverb drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="reverb-piano" aria-label="Play reverb piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_HEAT_URL">
+        <div class="card-name">Heat</div>
+        <div class="card-desc">Tube-style saturator</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="heat-vocal" aria-label="Play heat vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="heat-drums" aria-label="Play heat drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="heat-piano" aria-label="Play heat piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_WARMER_URL">
+        <div class="card-name">Warmer</div>
+        <div class="card-desc">Analog tape colour</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="warmer-vocal" aria-label="Play warmer vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="warmer-drums" aria-label="Play warmer drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="warmer-piano" aria-label="Play warmer piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_CRUNCH_URL">
+        <div class="card-name">Crunch</div>
+        <div class="card-desc">Fuzz / overdrive / bitcrush</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="crunch-vocal" aria-label="Play crunch vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="crunch-drums" aria-label="Play crunch drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="crunch-piano" aria-label="Play crunch piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_SMASHER_URL">
+        <div class="card-name">Smasher</div>
+        <div class="card-desc">Drive saturator</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="smasher-vocal" aria-label="Play smasher vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="smasher-drums" aria-label="Play smasher drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="smasher-piano" aria-label="Play smasher piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_TONE_URL">
+        <div class="card-name">Tone</div>
+        <div class="card-desc">Coloured 4-band EQ</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="tone-vocal" aria-label="Play tone vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="tone-drums" aria-label="Play tone drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="tone-piano" aria-label="Play tone piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_DEESSER_URL">
+        <div class="card-name">De-Esser</div>
+        <div class="card-desc">Sibilance reducer</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="deesser-vocal" aria-label="Play deesser vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="deesser-drums" aria-label="Play deesser drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="deesser-piano" aria-label="Play deesser piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_SQUEEZE_URL">
+        <div class="card-name">Squeeze</div>
+        <div class="card-desc">One-knob compressor</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="squeeze-vocal" aria-label="Play squeeze vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="squeeze-drums" aria-label="Play squeeze drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="squeeze-piano" aria-label="Play squeeze piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+      <a class="card" href="BUY_BRICK_URL">
+        <div class="card-name">Brick</div>
+        <div class="card-desc">Look-ahead limiter</div>
+        <div class="card-sources"><button class="play-btn card-src-btn" type="button" data-audio="brick-vocal" aria-label="Play brick vocal"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="brick-drums" aria-label="Play brick drums"><span class="play-icon" aria-hidden="true"></span></button><button class="play-btn card-src-btn" type="button" data-audio="brick-piano" aria-label="Play brick piano"><span class="play-icon" aria-hidden="true"></span></button></div><div class="card-price">$5</div>
+      </a>
+    </div>
+
+    <p class="grid-after">
+      <a class="bundle-nudge" href="https://stupidsimpleaudio.gumroad.com/l/bundle">
+        Or grab all 22 for <strong>$50</strong> →
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ============== PLUGIN DETAIL MODAL ==============
+     Populated by plugin-modal.js when a card is clicked. The modal pulls
+     the plugin name + description from the card itself and shows a
+     screenshot from screenshots/<name>.png. -->
+<div class="modal" id="plugin-modal" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-card" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+    <button class="modal-close" type="button" data-modal-close aria-label="Close">✕</button>
+    <h2 class="modal-title" id="modal-title">Plugin</h2>
+    <p class="modal-desc">Description</p>
+
+    <div class="modal-screenshot">
+      <img id="modal-img" alt="" loading="lazy">
+      <div class="modal-screenshot-fallback">photo coming soon</div>
+    </div>
+
+    <div class="modal-sources">
+      <div class="modal-source">
+        <button class="play-btn modal-play-btn" type="button" data-audio="" data-source="vocal" aria-label="Play with vocal">
+          <span class="play-icon" aria-hidden="true"></span>
+        </button>
+        <span class="modal-source-label">vocal</span>
+      </div>
+      <div class="modal-source">
+        <button class="play-btn modal-play-btn" type="button" data-audio="" data-source="drums" aria-label="Play with drums">
+          <span class="play-icon" aria-hidden="true"></span>
+        </button>
+        <span class="modal-source-label">drums</span>
+      </div>
+      <div class="modal-source">
+        <button class="play-btn modal-play-btn" type="button" data-audio="" data-source="piano" aria-label="Play with piano">
+          <span class="play-icon" aria-hidden="true"></span>
+        </button>
+        <span class="modal-source-label">piano</span>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <a class="btn btn-primary modal-buy-btn" href="#" id="modal-buy">Buy — $5</a>
+    </div>
+
+    <a class="modal-bundle-nudge" href="https://stupidsimpleaudio.gumroad.com/l/bundle">or get all 22 for $50 →</a>
+  </div>
+</div>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="footer-platforms">macOS · Windows · AU + VST3</p>
+    <p class="footer-links">
+      <a href="mailto:goodluck.rylie@gmail.com">goodluck.rylie@gmail.com</a>
+      <span class="sep">·</span>
+      <a href="LICENSE.txt">License</a>
+      <span class="sep">·</span>
+      <a href="https://juce.com" rel="noopener">Built on JUCE</a>
+    </p>
+    <p class="footer-fine">© 2026 Wish Me Luck Entertainment LLC</p>
+  </div>
+</footer>
+
+</body>
+</html>

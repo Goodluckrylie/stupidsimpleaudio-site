@@ -1,0 +1,572 @@
+/* ============== Stupid Simple — landing page (minimal) ==============
+   Three sections: hero, plugin grid, footer. Every card is a buy button.
+   Palette mirrored from shared/include/SSColors.h.
+   --------------------------------------------------------- */
+
+:root {
+  --cream:      #FAF3E0;
+  --cream-deep: #F1E6C8;
+  --ink:        #1A1410;
+  --ink-soft:   #6B5E47;
+  --yellow:     #FFD93D;
+  --yellow-deep:#F0C420;
+  --track:      #E8DDB8;
+
+  --serif:   "Caveat", "Marker Felt", "Comic Sans MS", cursive;
+  --hand:    "Patrick Hand", "Marker Felt", cursive;
+  --sans:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: var(--ink); text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* ============== Buttons ============== */
+
+.btn {
+  display: inline-block;
+  font-family: var(--hand);
+  font-size: 24px;
+  padding: 16px 32px;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  background: var(--cream);
+  color: var(--ink);
+  transition: transform 80ms ease, box-shadow 80ms ease;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.btn:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--ink); }
+.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+
+.btn-primary { background: var(--yellow); }
+.btn-huge {
+  font-size: 34px;
+  padding: 24px 50px;
+  border-width: 4px;
+  border-radius: 18px;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.btn-huge:hover { box-shadow: 7px 7px 0 var(--ink); }
+
+/* ============== Hero ============== */
+
+.hero {
+  padding: 32px 0 40px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--cream) 80%, var(--cream-deep) 100%);
+}
+.hero-smiley {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 8px;
+  transform: rotate(-4deg);
+  animation: bobble 6s ease-in-out infinite;
+}
+@keyframes bobble {
+  0%, 100% { transform: rotate(-4deg) translateY(0); }
+  50%      { transform: rotate(-1deg) translateY(-6px); }
+}
+.hero-title {
+  font-family: var(--serif);
+  font-size: 76px;
+  line-height: 1;
+  margin: 0 0 6px;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+.hero-tag {
+  font-family: var(--hand);
+  font-size: 24px;
+  margin: 0 0 22px;
+  color: var(--ink);
+}
+.hero-cta {
+  margin-bottom: 14px;
+}
+.hero-sub {
+  font-family: var(--hand);
+  font-size: 20px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.hero-sub strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+.hero-sub .arrow {
+  display: inline-block;
+  margin-left: 4px;
+  animation: bounceDown 2.5s ease-in-out infinite;
+}
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(4px); }
+}
+
+/* ============== Plugin grid (each card = buy button) ============== */
+
+.section-grid {
+  padding: 36px 0 56px;
+  background: var(--cream-deep);
+}
+
+/* ---- Three dry source players above the grid (vocal / drums / piano) ---- */
+.dry-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0 auto 18px;
+  max-width: 900px;
+}
+.dry-sample {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--cream);
+  border: 2.5px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.dry-text { flex: 1; min-width: 0; }
+.dry-label {
+  font-family: var(--hand);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.dry-hint {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+  line-height: 1.25;
+}
+
+/* Small caption below the dry row that explains what the cards do */
+.grid-intro {
+  text-align: center;
+  font-family: var(--hand);
+  font-size: 18px;
+  color: var(--ink-soft);
+  margin: 0 0 22px;
+}
+
+/* Collapse the 3 dry-sample bars to a single column on narrow screens */
+@media (max-width: 760px) {
+  .dry-row { grid-template-columns: 1fr; gap: 10px; }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  /* flex column: name + desc on top, 3-source play row in the middle,
+     price pinned bottom-right. position:relative anchors the price. */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;            /* taller to comfortably fit 44px buttons + labels */
+  background: var(--cream);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  padding: 14px 18px 14px;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 80ms ease, box-shadow 80ms ease, background-color 100ms ease;
+  text-decoration: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+  background: var(--yellow);
+}
+.card:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.card-name {
+  font-family: var(--hand);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 4px;
+}
+.card-desc {
+  flex: 1;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+.card:hover .card-desc { color: var(--ink); }
+.card-price {
+  align-self: flex-end;
+  margin-top: 10px;
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+}
+
+/* ---- Play button (shared between dry-sample bar and per-card) ----
+   Default size is 48px (just above the 44px mobile touch-target floor).
+   Specific contexts (card-src-btn, modal source buttons) override below. */
+.play-btn {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border: 2.5px solid var(--ink);
+  border-radius: 999px;
+  background: var(--cream);
+  box-shadow: 2px 2px 0 var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 80ms ease, box-shadow 80ms ease, background-color 100ms ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.play-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--ink);
+  background: var(--yellow);
+}
+.play-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+.play-btn:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* The icon — a triangle drawn with a CSS clip-path so we can morph to a square
+   when playing without swapping content. */
+.play-icon {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: var(--ink);
+  /* Right-pointing triangle by default. */
+  clip-path: polygon(15% 0%, 100% 50%, 15% 100%);
+  transform: translateX(1px); /* optical centring */
+  transition: clip-path 120ms ease, transform 120ms ease;
+}
+/* When the card is playing, icon morphs to a "pause" pair of bars. */
+.play-btn.playing .play-icon {
+  clip-path: polygon(
+    0% 0%, 35% 0%, 35% 100%, 0% 100%,    /* left bar */
+    0% 0%,                                /* close left rect */
+    65% 0%, 100% 0%, 100% 100%, 65% 100%, /* right bar */
+    65% 0%
+  );
+  transform: translateX(0);
+}
+/* Playing-state visual cue on the card itself: stay in yellow + a small ring. */
+.card .play-btn.playing,
+.dry-sample .play-btn.playing {
+  background: var(--yellow);
+}
+.card:has(.play-btn.playing) {
+  background: var(--yellow);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+.card:has(.play-btn.playing) .card-desc { color: var(--ink); }
+
+/* Row of 3 small play buttons (vocal/drums/piano) inside each card.
+   Sits at the bottom of the card, above the price. */
+.card-sources {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 12px;
+}
+.card-src-btn {
+  width: 44px;            /* mobile-friendly tap target (Apple HIG minimum) */
+  height: 44px;
+  position: relative;     /* override the absolute positioning of generic .play-btn */
+  top: auto;
+  right: auto;
+}
+.card-src-btn .play-icon {
+  width: 13px;
+  height: 13px;
+  transform: translateX(0.5px);
+}
+/* Tiny labels under each source button. Buttons are always in vocal/drums/piano
+   order, so we use :nth-child instead of needing per-button data attributes. */
+.card-src-btn::after {
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--hand);
+  font-size: 11px;
+  color: var(--ink-soft);
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.card-sources .card-src-btn:nth-child(1)::after { content: "vocal"; }
+.card-sources .card-src-btn:nth-child(2)::after { content: "drums"; }
+.card-sources .card-src-btn:nth-child(3)::after { content: "piano"; }
+
+/* Reserve space below the source buttons so the labels don't crowd the price */
+.card-sources { margin-bottom: 14px; }
+
+/* Bundle nudge under the grid */
+.grid-after {
+  text-align: center;
+  margin: 40px 0 0;
+}
+.bundle-nudge {
+  display: inline-block;
+  font-family: var(--hand);
+  font-size: 22px;
+  color: var(--ink);
+  border-bottom: 2px dashed var(--ink);
+  padding-bottom: 2px;
+  text-decoration: none;
+  transition: color 100ms ease, border-color 100ms ease;
+}
+.bundle-nudge:hover {
+  color: var(--yellow-deep);
+  border-color: var(--yellow-deep);
+}
+.bundle-nudge strong { font-weight: 700; }
+
+/* ============== Plugin detail modal ============== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 180ms ease;
+  pointer-events: none;
+}
+.modal.open { opacity: 1; pointer-events: auto; }
+.modal[hidden] { display: none !important; }
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 20, 16, 0.55);
+  cursor: pointer;
+}
+
+.modal-card {
+  position: relative;
+  background: var(--cream);
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 32px 36px 28px;
+  max-width: 540px;
+  width: 100%;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  text-align: center;
+  transform: translateY(8px) scale(0.98);
+  transition: transform 180ms ease;
+}
+.modal.open .modal-card { transform: translateY(0) scale(1); }
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-size: 16px;
+  font-family: var(--sans);
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 100ms ease;
+}
+.modal-close:hover { background: var(--yellow); }
+
+.modal-title {
+  font-family: var(--serif);
+  font-size: 44px;
+  line-height: 1;
+  margin: 4px 0 8px;
+  font-weight: 700;
+}
+.modal-desc {
+  font-family: var(--hand);
+  font-size: 20px;
+  color: var(--ink-soft);
+  margin: 0 0 22px;
+  line-height: 1.3;
+}
+
+.modal-screenshot {
+  position: relative;
+  width: 100%;
+  /* Match the actual screenshot aspect ratio (1404x1036 = 27/20) so the
+     image fills the box edge-to-edge with no blank space around it. */
+  aspect-ratio: 27 / 20;
+  margin: 0 0 22px;
+  background: var(--cream-deep);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.modal-screenshot img {
+  width: 100%;
+  height: 100%;
+  /* cover fills the box completely; for Heat (slightly different ratio) a
+     hairline edge gets cropped, but that's invisible. */
+  object-fit: cover;
+  display: block;
+}
+.modal-screenshot-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--hand);
+  font-size: 18px;
+  color: var(--ink-soft);
+  text-align: center;
+  padding: 16px;
+}
+
+/* Three source-specific play buttons (vocal/drums/piano) */
+.modal-sources {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  margin: 0 0 22px;
+  flex-wrap: wrap;
+}
+.modal-source {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.modal-source .play-btn {
+  width: 60px;
+  height: 60px;
+}
+.modal-source .play-btn .play-icon {
+  width: 18px;
+  height: 18px;
+}
+.modal-source-label {
+  font-family: var(--hand);
+  font-size: 16px;
+  color: var(--ink);
+  text-transform: lowercase;
+}
+
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 0 0 14px;
+  flex-wrap: wrap;
+}
+.modal-buy-btn {
+  font-size: 22px;
+  padding: 14px 28px;
+}
+
+.modal-bundle-nudge {
+  display: inline-block;
+  font-family: var(--hand);
+  font-size: 16px;
+  color: var(--ink-soft);
+  border-bottom: 2px dashed var(--ink-soft);
+  padding-bottom: 2px;
+  text-decoration: none;
+}
+.modal-bundle-nudge:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+@media (max-width: 540px) {
+  .modal-card { padding: 22px 20px 20px; }
+  .modal-title { font-size: 32px; }
+  .modal-desc { font-size: 18px; }
+  .modal-buy-btn { font-size: 19px; padding: 12px 22px; }
+}
+
+/* ============== Footer ============== */
+
+.footer {
+  padding: 36px 0 50px;
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+  font-size: 15px;
+}
+.footer a { color: var(--cream); }
+.footer a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.footer-platforms {
+  font-family: var(--hand);
+  font-size: 18px;
+  margin: 0 0 12px;
+  color: var(--track);
+}
+.footer-links { margin: 4px 0; }
+.footer-links .sep { color: var(--ink-soft); margin: 0 8px; }
+.footer-fine { color: var(--ink-soft); font-size: 13px; margin-top: 16px; }
+
+/* ============== Responsive ============== */
+
+@media (max-width: 700px) {
+  .hero { padding: 44px 0 44px; }
+  .hero-smiley { width: 120px; height: 120px; }
+  .hero-title { font-size: 60px; }
+  .hero-tag { font-size: 21px; }
+  .btn-huge { font-size: 26px; padding: 18px 36px; }
+  .hero-sub { font-size: 19px; }
+  .section-grid { padding: 36px 0 50px; }
+  .card-name { font-size: 24px; }
+  .card-price { font-size: 26px; }
+  .bundle-nudge { font-size: 19px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-smiley, .hero-sub .arrow { animation: none; }
+  .btn, .card { transition: none; }
+}
