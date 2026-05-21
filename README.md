@@ -27,7 +27,7 @@ Or just open `index.html` in your browser — no server needed.
 ## Pricing model
 
 - **$5 per plugin** — each plugin card is a buy button that links to that plugin's own Gumroad product
-- **$50 for the bundle** — the big hero button + the "Or grab all 22 for $50" nudge under the grid
+- **$40 for the bundle** — the big hero button + the "Or grab all 22 for $40" nudge under the grid
 
 ## Before going live — fill in the 23 Gumroad URLs
 
@@ -36,7 +36,7 @@ Search and replace each one in `index.html`:
 
 | Placeholder | What it points to |
 |---|---|
-| `BUY_BUNDLE_URL` | Bundle ($50) — appears **twice** (hero button + bundle nudge) |
+| `BUY_BUNDLE_URL` | Bundle ($40) — appears **twice** (hero button + bundle nudge) |
 | `BUY_DELAY_URL` | Delay ($5) |
 | `BUY_REVERB_URL` | Reverb ($5) |
 | `BUY_WOBBLER_URL` | Wobbler ($5) |
@@ -109,7 +109,7 @@ sed -i '' \
 
 - Add or remove a plugin → add/remove a `.card` block in `index.html` AND
   update the number "22" everywhere (search for `22` and `twenty-two`).
-- Change pricing → search for `$5` and `$50` in `index.html`. Currently 1
+- Change pricing → search for `$5` and `$40` in `index.html`. Currently 1
   occurrence each in the hero/nudge, and `$5` × 22 on cards.
 - Change support email → search for `goodluck.rylie@gmail.com` (footer +
   `LICENSE.txt`).
