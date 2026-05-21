@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stupid Simple Audio — 22 plugins. Three knobs each.</title>
-<meta name="description" content="22 audio plugins. Three knobs each. Bundle $40, or pick one for $5.">
+<meta name="description" content="22 audio plugins. Three knobs each. Bundle $25, or pick one for $5.">
 <meta property="og:title" content="Stupid Simple Audio">
-<meta property="og:description" content="22 audio plugins. Three knobs each. Bundle $40, or pick one for $5.">
+<meta property="og:description" content="22 audio plugins. Three knobs each. Bundle $25, or pick one for $5.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://stupidsimpleaudio.com">
 <meta name="theme-color" content="#FAF3E0">
@@ -27,7 +27,7 @@
     <h1 class="hero-title">stupid simple</h1>
     <p class="hero-tag">22 audio plugins. Three knobs each.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary btn-huge" href="https://stupidsimpleaudio.gumroad.com/l/bundle">Buy all 22 — $40</a>
+      <a class="btn btn-primary btn-huge" href="https://stupidsimpleaudio.gumroad.com/l/bundle">Buy all 22 — $25</a>
     </div>
     <p class="hero-sub">or pick one for <strong>$5</strong> <span class="arrow">↓</span></p>
   </div>
@@ -186,9 +186,30 @@
 
     <p class="grid-after">
       <a class="bundle-nudge" href="https://stupidsimpleaudio.gumroad.com/l/bundle">
-        Or grab all 22 for <strong>$40</strong> →
+        Or grab all 22 for <strong>$25</strong> →
       </a>
     </p>
+  </div>
+</section>
+
+<!-- ============== EMAIL CAPTURE ==============
+     Posts to Gumroad's follower endpoint — subscribers join the same audience
+     that buyers do, so the broadcast list stays unified in Gumroad. The form's
+     `action` URL works for any Gumroad seller; the seller is identified by the
+     subdomain (stupidsimpleaudio.gumroad.com → seller=stupidsimpleaudio). -->
+<section class="section-follow">
+  <div class="wrap">
+    <h2 class="follow-title">Stay in the loop</h2>
+    <p class="follow-sub">Drop your email — I'll let you know when new plugins land or there's a sale on. No spam, ~one email a month.</p>
+    <form class="follow-form"
+          action="https://app.gumroad.com/follow_from_embed_form"
+          method="post"
+          target="_blank">
+      <input type="hidden" name="seller_id" value="stupidsimpleaudio">
+      <input class="follow-email" type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+      <button class="btn btn-primary follow-btn" type="submit">Subscribe</button>
+    </form>
+    <p class="follow-hint">Buyers are automatically added — this is for everyone else who wants to know what's coming next.</p>
   </div>
 </section>
 
@@ -233,7 +254,7 @@
       <a class="btn btn-primary modal-buy-btn" href="#" id="modal-buy">Buy — $5</a>
     </div>
 
-    <a class="modal-bundle-nudge" href="https://stupidsimpleaudio.gumroad.com/l/bundle">or get all 22 for $40 →</a>
+    <a class="modal-bundle-nudge" href="https://stupidsimpleaudio.gumroad.com/l/bundle">or get all 22 for $25 →</a>
   </div>
 </div>
 
